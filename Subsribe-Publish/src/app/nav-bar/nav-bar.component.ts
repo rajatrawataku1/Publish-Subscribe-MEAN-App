@@ -17,8 +17,8 @@ export class NavBarComponent implements OnInit {
     let url = `${this.apiRoot}/publish`;
     var input_data={"Name":titelInput,"Topic":cateInput,"Content":descInput};
     this.http.post(url,input_data).subscribe(res => {
-      $('#modal2').modal('close');
-      Materialize.toast('Published !!!! ',4000)
+      // $('#modal2').modal('close');
+      // Materialize.toast('Published !!!! ',4000)
 
     });
 

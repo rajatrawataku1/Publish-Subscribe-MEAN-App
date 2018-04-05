@@ -54,8 +54,8 @@ export class DashboardComponent implements OnInit {
     var input_data={"categoryArray": temp};
     console.log(input_data);
     this.http.post(url,input_data).subscribe(res => {
-        $('#modal1').modal('close');
-        Materialize.toast('Subscribed !!!! ',4000)
+        // $('#modal1').modal('close');
+        // Materialize.toast('Subscribed !!!! ',4000)
         this.getData();
         this.cateArray=[];
     });
@@ -65,20 +65,22 @@ export class DashboardComponent implements OnInit {
   public getData(){
     let url = `${this.apiRoot}/getData`;
     this.http.get(url).subscribe(res => {
-      console.log(res._body)
-      if(res._body.length!=0)
-      {
-        this.dataArray=JSON.parse(res._body);
-      }else{
-        this.dataArray=[];
+
+      try{
+        if((<any>res)._body.length!=0)
+        {
+          this.dataArray=JSON.parse((<any>res)._body);
+        }else{
+          this.dataArray=[];
+        }
+
+      } catch(err){
+        console.log(err);
       }
     });
   }
 
-  public onSubmit(){
-    console.log('submit is clicked');
-    console.log(form.controls['selectedTechs'].value);
-  }
+
 
   public changeStat(cate){
 
