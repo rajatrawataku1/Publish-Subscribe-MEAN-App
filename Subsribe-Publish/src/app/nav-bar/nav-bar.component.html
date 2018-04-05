@@ -1,58 +1,29 @@
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <div class="row">
-      <div class="col s12">
-        <h4 class="center">Choose Category</h4>
-      </div>
-      <div class="input-field col s8">
-        <i class="material-icons prefix">textsms</i>
-        <input type="text" id="autocomplete-input" class="autocomplete" #catValue>
-        <label for="autocomplete-input">Autocomplete</label>
-      </div>
-      <div class="input-field col s4">
-        <a class="waves-effect waves-light btn" (click)='addCate(catValue.value)'><i class="material-icons left">add_circle</i>Add</a>
-      </div>
-
-      <div class="col s12">
-        <br>
-        <div *ngFor="let cat of cateArray" style="display:inline-block;">
-          <div class="chip" style="display:inline-block;">
-            {{cat}}
-          </div>
-        </div>
-      </div>
-
-      <div class="col s12 center">
-        <hr>
-        <a class="waves-effect waves-light btn" (click)='saveData()'><i class="material-icons left">cloud_upload</i>SAVE</a>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div id="modal2" class="modal">
   <div class="modal-content">
     <div class="row">
       <div class="col s12">
-        <h4 class="center">Publish</h4>
+        <h5 class="center">Publish your Content</h5>
+        <hr>
+        <br>
       </div>
 
       <div class="input-field col s12">
-        <i class="material-icons prefix">textsms</i>
-        <input placeholder="Enter Title " id="first_name" type="text" class="validate" #titleValueInput>
-        <label for="first_name">Title</label>
+        <i class="material-icons prefix">person</i>
+        <input  id="first_name" type="text" class="validate" #titleValueInput>
+        <label for="first_name">Name</label>
       </div>
 
       <div class="input-field col s12">
-        <i class="material-icons prefix">textsms</i>
+        <i class="material-icons prefix">chat_bubble</i>
         <input type="text" id="autocomplete-input" class="autocomplete" #catValueInput>
-        <label for="autocomplete-input">Enter Category</label>
+        <label for="autocomplete-input">Category</label>
       </div>
 
       <div class="input-field col s12">
-        <i class="material-icons prefix">textsms</i>
+        <i class="material-icons prefix">description</i>
         <textarea id="textarea1" class="materialize-textarea" #descValueInput></textarea>
-        <label for="textarea1">Description</label>
+        <label for="textarea1">Content</label>
       </div>
 
       <div class="col s12 center">
@@ -65,8 +36,8 @@
 <div id='first_frame' style="position:absolute;top:0%;left:0%;height:50%;width:100%;background:#e91e63 url(../../assets/images/bg.png);">
 </div>
 
-<div class="row" style="position:absolute;top:35%;left:0%;height:50%;width:100%;">
-    <div class="col l6 offset-l3">
+<div class="row" style="position:absolute;top:30%;left:0%;height:50%;width:100%;">
+    <div class="col l4 offset-l4">
       <div class="card-panel z-depth-5">
         <div class="row">
           <div class="col s12 center">
@@ -74,26 +45,24 @@
             <hr>
             <br><br>
           </div>
-          <div class="col s6 center">
-            <a class="waves-effect waves-light btn modal-trigger teal" href='#modal2'><i class="material-icons left">cloud</i>Publish</a>
+          <div class="col s12 center">
+            <a class="waves-effect waves-light btn modal-trigger teal" href='#modal2'><i class="material-icons left">publish</i>Publish</a>
           </div>
-          <div class="col s6 center">
-            <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Subscribe</a>
+          <div class="col s12 center">
+            <br>
+            <br>
           </div>
+          <div class="col s12 center">
+            <a class="waves-effect waves-light btn" href='/Subscribe'><i class="material-icons left">subscriptions</i>Subscribe</a>
+          </div>
+
+          <div class="col s12 center">
+            <br> <br>
+            <hr>
+            <h6> Made with Love | Made with Passion </h6>
+          </div>
+
         </div>
       </div>
     </div>
 </div>
-
-<!-- <nav class="pink">
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Pub & Sub</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li>
-          <a class="waves-effect waves-light btn modal-trigger teal" href="#modal1">Choose</a>
-          <a class="waves-effect waves-light btn modal-trigger teal" href="#modal2">Publish</a>
-
-        </li>
-      </ul>
-    </div>
-</nav> -->

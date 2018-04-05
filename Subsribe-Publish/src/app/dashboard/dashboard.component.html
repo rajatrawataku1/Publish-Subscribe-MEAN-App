@@ -1,23 +1,61 @@
 
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <div class="row">
+      <div class="col s12">
+        <br>
+      </div>
+      <!-- <div class="input-field col l6 offset-l2">
+        <i class="material-icons prefix">assignment</i>
+        <input type="text" id="autocomplete-input" class="autocomplete" #catValue>
+        <label for="autocomplete-input">Choose Category</label>
+      </div> -->
 
-<div class="row" *ngFor="let blog of dataArray">
-    <div class="col l5 offset-l1">
-      <ul class="collapsible">
-          <li>
-            <div class="collapsible-header">
-              <div class="row">
-                <div class="col s12">
-                  {{blog.Name}}
-                </div>
-                <div class="col s12">
-                  {{blog.Topic}}
-                </div>
-              </div>
-            </div>
-            <div class="collapsible-body">
-              {{blog.Content}}
-            </div>
-          </li>
-      </ul>
+      <div class="col s12">
+        <div *ngFor="let val of CategoryData" style="display:inline-block;margin:5px;">
+          <a class="waves-effect waves-light btn" [ngClass]="{selected:getClassInput(val.name)}" (click)="changeStat(val.name)" >{{val.name}}</a>
+        </div>
+      </div>
+
+      <!-- <div class="col s12">
+        <br>
+        <div *ngFor="let cat of cateArray" style="display:inline-block;">
+          <div class="chip" style="display:inline-block;">
+            {{cat}}
+          </div>
+        </div>
+      </div> -->
+
+      <div class="col s12 center">
+        <a class="waves-effect waves-light btn" (click)='saveData()'><i class="material-icons left">cloud_upload</i>SAVE</a>
+      </div>
     </div>
+  </div>
+</div>
+
+<div id='first_frame' style="position:absolute;top:0%;left:0%;height:40%;width:100%;background:#e91e63 url(../../assets/images/bg.png);text-align:center;">
+  <h4 style="color:white;">Subscribe</h4>
+  <div id='first_frame' style="position:absolute;top:15%;left:10%;transform:translate(0,-50%);height:auto;width:auto;">
+    <a class="waves-effect waves-light btn btn modal-trigger " href="#modal1"><i class="material-icons left">web</i>Select Topics</a>
+  </div>
+</div>
+
+<div id='second_frame' style="position:absolute;top:50%;left:0%;height:90%;width:100%;">
+  <div class="row" *ngFor="let blog of dataArray">
+      <div class="col l4" >
+        <div class="card-panel z-depth-5">
+          <div class="row">
+            <div class="col s1"><i class="material-icons prefix">account_circle</i></div>
+            <div class="col s4">{{blog.Name}}</div>
+            <div class="col s1 offset-s2"><i class="material-icons prefix">location_city</i></div>
+            <div class="col s4">{{blog.Topic}}</div>
+            <div class="col s12"><hr> <br></div>
+            <div class="col s3"><i class="material-icons prefix">description</i></div>
+
+            <div class="col s9">{{blog.Content}}</div>
+          </div>
+
+        </div>
+      </div>
+  </div>
 </div>
