@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SubsribePublish</title>
+  <base href="/">
+
+  <!-- material core css -->
+  <link href="./assets/css/materialize.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- entering icon class -->
+  <link href="./assets/css/mate_icon.css" rel="stylesheet" />
+
+  <!-- jquery  -->
+  <script type="text/javascript" src='./assets/js/jquery.min.js'></script>
+
+  <!--  materialise js-->
+  <script type="text/javascript" src='./assets/js/materialize.js'></script>
+
+</head>
+<body>
+  <app-root></app-root>
+</body>
+<script>
+
+  $(document).ready(function(){
+    $('.modal').modal();
+
+    $('input.autocomplete').autocomplete({
+      data: {
+        "Apple": null,
+        "Microsoft": null,
+        "Google": 'https://placehold.it/250x250'
+      },
+    });
+
+  })
+
+
+</script>
+</html>

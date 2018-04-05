@@ -1,0 +1,23 @@
+
+
+<div class="row" *ngFor="let blog of dataArray">
+    <div class="col l5 offset-l1">
+      <ul class="collapsible">
+          <li>
+            <div class="collapsible-header">
+              <div class="row">
+                <div class="col s12">
+                  {{blog.Name}}
+                </div>
+                <div class="col s12">
+                  {{blog.Topic}}
+                </div>
+              </div>
+            </div>
+            <div class="collapsible-body">
+              {{blog.Content}}
+            </div>
+          </li>
+      </ul>
+    </div>
+</div>
