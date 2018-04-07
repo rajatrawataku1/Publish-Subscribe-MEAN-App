@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule , routingComponents } from './app-routing.moduel';
-import * as $ from 'jquery'
 
 @NgModule({
   declarations: [

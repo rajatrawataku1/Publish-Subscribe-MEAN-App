@@ -61,7 +61,6 @@ app.get('/getData',(req,response) => {
   dbo.collection("subscribe").find().toArray(function(err, result) {
     if (err) throw err;
     console.log(result.slice(-1)[0]);
-
     result=result.slice(-1)[0];
     var citerion={};
     citerion['$or']=result.categoryArray;
